@@ -31,18 +31,21 @@ int main() {
             crear_nueva_tarea(to_do_list);
         } 
         else if(selector == 2) {
-            ordenar_vector(to_do_list);
+
         }
         else if(selector == 3) {
-            mostrar_lista(to_do_list);
+            ordenar_vector(to_do_list);
         }
         else if(selector == 4) {
-            borrar_lista(to_do_list);
+            mostrar_lista(to_do_list);
         }
         else if(selector == 5) {
-            exportar_lista(nombre_veces, to_do_list);
+            borrar_lista(to_do_list);
         }
         else if(selector == 6) {
+            exportar_lista(nombre_veces, to_do_list);
+        }
+        else if(selector == 7) {
             mostrar_informacion();
         }
         else {

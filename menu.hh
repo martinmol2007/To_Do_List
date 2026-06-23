@@ -11,11 +11,12 @@ void selector_inicial() {
     cout << "Selecciona una de las posibles opciones: " << endl;
     cout << "00. Salir" << endl;
     cout << "01. Añadir tarea a la lista" << endl;
-    cout << "02. Ordenar la lista" << endl;
-    cout << "03. Mostrar la lista" << endl;
-    cout << "04. Borrar la lista" << endl;
-    cout << "05. Exportar lista tipo .txt" << endl;
-    cout << "06. Mostrar opciones" << endl;
+    cout << "02. Marcar tarea como hecha" << endl;
+    cout << "03. Ordenar la lista" << endl;
+    cout << "04. Mostrar la lista" << endl;
+    cout << "05. Borrar la lista" << endl;
+    cout << "06. Exportar lista tipo .txt" << endl;
+    cout << "07. Mostrar opciones" << endl;
     cout << "Ingresa tu opcion: ";
 
     return;
@@ -47,11 +48,12 @@ void mostrar_informacion() {
     cout << "//////////////////INFO/////////////////////////" << endl;
     cout << "00. Salir" << endl;
     cout << "01. Añadir tarea a la lista" << endl;
-    cout << "02. Ordenar la lista" << endl;
-    cout << "03. Mostrar la lista" << endl;
-    cout << "04. Borrar la lista" << endl;
-    cout << "05. Exportar lista tipo .txt" << endl;
-    cout << "06. Mostrar opciones" << endl;
+    cout << "02. Marcar tarea como hecha" << endl;
+    cout << "03. Ordenar la lista" << endl;
+    cout << "04. Mostrar la lista" << endl;
+    cout << "05. Borrar la lista" << endl;
+    cout << "06. Exportar lista tipo .txt" << endl;
+    cout << "07. Mostrar opciones" << endl;
     cout << "///////////////////////////////////////////////" << endl;
 
     return;
