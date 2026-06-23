@@ -48,11 +48,6 @@ int main() {
         else {
             cout << "Opcion incorrecta, prueba de nuevo" << endl;
         }
-
-        primera = false;
-        if(not primera) {
-            cout << "Ingresa tu opcion: ";
-        }
     }
   
     return 0;
