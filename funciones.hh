@@ -95,7 +95,7 @@ string estado(const bool& b) {
 void mostrar_lista(const vector<Informacion>& v) {
     cout << "Num.  Prioridad    Estado    Tarea" << endl;
     for(int i = 0; i < v.size(); i++) {
-        cout << "[" << i+1 << "]" << "       " << v[i].prioridad << "      " << "   [" << estado(v[i].realizada) << " ]" << "     " << v[i].tarea << endl;
+        cout << "[" << i+1 << "]" << "       " << v[i].prioridad << "      " << "    " << estado(v[i].realizada) << "       " << v[i].tarea << endl;
     }
 
     return;
@@ -172,7 +172,7 @@ void crear_archivo(const vector<Informacion>& v, string nombre) {
 
     archivo << "Num.  Prioridad    Estado    Tarea" << endl;
     for(int i = 0; i < v.size(); i++) {
-        archivo << "[" << i+1 << "]" << "       " << v[i].prioridad << "      " << "   [" << estado(v[i].realizada) << " ]" << "     " << v[i].tarea << endl;
+        archivo << "[" << i+1 << "]" << "       " << v[i].prioridad << "      " << "    " << estado(v[i].realizada) << "       " << v[i].tarea << endl;
     }
 
     return;
@@ -188,8 +188,8 @@ void crear_archivo(const vector<Informacion>& v, string nombre) {
 void exportar_lista(map<string, int>& m, const vector<Informacion>& v) {
     string nombre;
     string nombre_archivo;
-    cout << "Introduce el nombre del archivo(sin espacios): ";
-    cin >> nombre;
+    cout << "Introduce el nombre del archivo: ";
+    getline(cin, nombre);
 
     // Verificar si el nombre del archivo ya ha sido creado
     // Si no ha sido creado, no le pone sufijo
