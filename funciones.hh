@@ -77,7 +77,12 @@ void crear_nueva_tarea(vector<Informacion>& to_do_list) {
     return;
 }
 
-
+/**
+ * @brief Saca el "emote" segun si esta hecha o no
+ * 
+ * @param b Estado
+ * @return string Emote
+ */
 string estado(const bool& b) {
     return b ? "✓" : "✖";
 }
@@ -95,6 +100,26 @@ void mostrar_lista(const vector<Informacion>& v) {
 
     return;
 }
+
+void marcar_tarea_hecha(vector<Informacion>& v) {
+    cout << "A continuacion, se mostrara la lista" << endl;
+    mostrar_lista(v);
+    cout << "Introduce el numero de la tarea que quieres marcar como hecha: ";
+
+    int num_tarea;
+    cin >> num_tarea;
+
+    if(num_tarea <= 0 or num_tarea >= v.size() + 1) {
+        cout << "Indice incorrecto, prueba de nuevo!" << endl; 
+    } else {
+        v[num_tarea-1].realizada = true;
+        cout << "Tarea numero " << num_tarea << " marcada como hecha!" << endl;
+    }
+
+    return;
+}
+
+
 
 
 /**
@@ -145,10 +170,11 @@ void crear_archivo(const vector<Informacion>& v, string nombre) {
     // Crea un archivo con ese nombre
     ofstream archivo(nombre);
 
-    archivo << "Num.  Prioridad    Tarea" << endl;
+    archivo << "Num.  Prioridad    Estado    Tarea" << endl;
     for(int i = 0; i < v.size(); i++) {
-        archivo << "[" << i+1 << "]" << "       " << v[i].prioridad << "        " << v[i].tarea << endl;
+        archivo << "[" << i+1 << "]" << "       " << v[i].prioridad << "      " << "   [" << estado(v[i].realizada) << " ]" << "     " << v[i].tarea << endl;
     }
+
     return;
 }
 
@@ -162,7 +188,7 @@ void crear_archivo(const vector<Informacion>& v, string nombre) {
 void exportar_lista(map<string, int>& m, const vector<Informacion>& v) {
     string nombre;
     string nombre_archivo;
-    cout << "Introduce el nombre del archivo: ";
+    cout << "Introduce el nombre del archivo(sin espacios): ";
     cin >> nombre;
 
     // Verificar si el nombre del archivo ya ha sido creado

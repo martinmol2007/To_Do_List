@@ -31,7 +31,11 @@ int main() {
             crear_nueva_tarea(to_do_list);
         } 
         else if(selector == 2) {
-
+            if(to_do_list.empty()) {
+                cout << "No hay tareas pendientes!" << endl;
+            } else {
+                marcar_tarea_hecha(to_do_list);
+            }
         }
         else if(selector == 3) {
             ordenar_vector(to_do_list);
