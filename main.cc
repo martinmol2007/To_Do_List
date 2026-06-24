@@ -37,7 +37,11 @@ int main() {
             ordenar_vector(to_do_list);
         }
         else if(selector == 4) {
-            mostrar_lista(to_do_list);
+            if(to_do_list.empty()) {
+                cout << "La lista esta vacia!" << endl;
+            } else {
+                mostrar_lista(to_do_list);
+            }
         }
         else if(selector == 5) {
             borrar_lista(to_do_list);
@@ -51,6 +55,8 @@ int main() {
         else {
             cout << "Opcion incorrecta, prueba de nuevo" << endl;
         }
+
+        cout << "Ingresa tu opcion: ";
     }
   
     return 0;

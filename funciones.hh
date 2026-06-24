@@ -78,15 +78,19 @@ void crear_nueva_tarea(vector<Informacion>& to_do_list) {
 }
 
 
+string estado(const bool& b) {
+    return b ? "✓" : "✖";
+}
+
 /**
  * @brief Mostrar la lista de tareas actuales
  * 
  * @param v Vector de tareas
  */
 void mostrar_lista(const vector<Informacion>& v) {
-    cout << "Num.  Prioridad    Tarea" << endl;
+    cout << "Num.  Prioridad    Estado    Tarea" << endl;
     for(int i = 0; i < v.size(); i++) {
-        cout << "[" << i+1 << "]" << "       " << v[i].prioridad << "        " << v[i].tarea << endl;
+        cout << "[" << i+1 << "]" << "       " << v[i].prioridad << "      " << "   [" << estado(v[i].realizada) << " ]" << "     " << v[i].tarea << endl;
     }
 
     return;
