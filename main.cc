@@ -12,8 +12,6 @@ int main() {
     vector<Informacion> to_do_list;
     // Para gestionar si ya se ha creado un archivo con ese nombre y cuantas veces se ha creado
     map<string, int> nombre_veces;
-    // Para saber cuando poner el comando de ayuda
-    bool primera = true;
 
     info_inicial();
 
