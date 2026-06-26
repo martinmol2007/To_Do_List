@@ -26,7 +26,7 @@ struct Informacion {
  * @param a Tarea a realizar 1
  * @param b Tarea a realizar 2
  * @return true Si a va antes que b
- * @return false Altramente
+ * @return false De lo contrario
  */
 bool cmp(const Informacion& a, const Informacion& b) {
     if(a.prioridad != b.prioridad) {
@@ -48,7 +48,7 @@ void ordenar_vector(vector<Informacion>& v) {
     }
     else {
         sort(v.begin(), v.end(), cmp);
-        cout << "Lista ordenada segun prioridad!" << endl;
+        cout << "Lista ordenada según prioridad!" << endl;
     }
     
     return;
@@ -64,7 +64,7 @@ void crear_nueva_tarea(vector<Informacion>& to_do_list) {
     Informacion info;
 
     // Consigue la tarea
-    cout << "Introduce el nombre de la tarea a relalizar: ";
+    cout << "Introduce el nombre de la tarea a realizar: ";
     string tarea;
     getline(cin, tarea);
     info.tarea = tarea;
@@ -73,6 +73,14 @@ void crear_nueva_tarea(vector<Informacion>& to_do_list) {
     cout << "Introduce la prioridad de la tarea (1, 2 o 3): ";
     int prioridad;
     cin >> prioridad;
+
+    // Por seguridad
+    if(prioridad <= 0 or prioridad > 3) {
+        cout << "Prioridad incorrecta!" << endl;
+
+        return;
+    }
+
     info.prioridad = prioridad;
     info.realizada = false;
 
@@ -114,22 +122,22 @@ void mostrar_lista(const vector<Informacion>& v) {
  * @param v Vector donde estan todas las tareas
  */
 void marcar_tarea_hecha(vector<Informacion>& v) {
-    cout << "A continuacion, se mostrara la lista" << endl;
+    cout << "A continuación, se mostrará la lista" << endl;
     mostrar_lista(v);
-    cout << "Introduce el numero de la tarea que quieres marcar como hecha: ";
+    cout << "Introduce el número de la tarea que quieres marcar como hecha: ";
 
     int num_tarea;
     cin >> num_tarea;
 
     if(num_tarea <= 0 or num_tarea >= v.size() + 1) {
-        cout << "Indice incorrecto, prueba de nuevo!" << endl; 
+        cout << "Índice incorrecto, prueba de nuevo!" << endl;
     } else {
         if(v[num_tarea-1].realizada) {
             cout << "Tarea previamente marcada como hecha" << endl;
         }
         else {
             v[num_tarea-1].realizada = true;
-            cout << "Tarea numero " << num_tarea << " marcada como hecha!" << endl;
+            cout << "Tarea número " << num_tarea << " marcada como hecha!" << endl;
         }
     }
 
@@ -178,7 +186,7 @@ void borrar_lista(vector<Informacion>& v) {
     }
 
     string confirmacion;
-    cout << "Estas seguro de que quieres borrar la lista? Introduce Y/N: ";
+    cout << "¿Estás seguro de que quieres borrar la lista? Introduce Y/N: ";
     cin >> confirmacion;
 
     if(confirmacion == "Y" or confirmacion == "y") {
@@ -200,7 +208,7 @@ void borrar_lista(vector<Informacion>& v) {
  * @brief Simple funcion para generar el nombre del archivo
  * 
  * @param nombre Nombre del archivo a poner
- * @param veces Veces que se ha creado una archivo como ese
+ * @param veces Veces que se ha creado un archivo como ese
  * @return string Nombre del archivo
  */
 string generador_nombre_archivo(string nombre, int veces) {

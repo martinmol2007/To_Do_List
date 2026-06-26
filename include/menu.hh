@@ -12,11 +12,11 @@ using namespace std;
  */
 void info_inicial() {
     cout << "////////////////////////////////////////////////////////////////////" << endl;
-    cout << "Bienvenido a la aplicacion (basica) para hacer tu To-Do List!" << endl;
-    cout << "Se dara la opcion para poder escoger entre tres prioridades, siendo" << endl;
-    cout << "1 la maxima prioridad y 3 la minima" << endl;
-    cout << "Tambien podras marcar como hecho las tareas ya realizadas" << endl;
-    cout << "A parte, podras exportarlo a un .txt" << endl;
+    cout << "Bienvenido a la aplicación (básica) para hacer tu To-Do List!" << endl;
+    cout << "Se dará la opción para poder escoger entre tres prioridades, siendo" << endl;
+    cout << "1 la máxima prioridad y 3 la mínima" << endl;
+    cout << "También podrás marcar como hechas las tareas ya realizadas" << endl;
+    cout << "Aparte, podrás exportarlo a un .txt" << endl;
     cout << "////////////////////////////////////////////////////////////////////" << endl;
 
     return;
@@ -45,8 +45,8 @@ void selector_inicial() {
 
 
 /**
- * @brief Mustra la informacion del menu
- * 
+ * @brief Muestra la informacion del menu
+ *
  */
 void mostrar_informacion() {
     cout << "//////////////////INFO/////////////////////////" << endl;

@@ -39,7 +39,7 @@ int main() {
         }
         else if(selector == 4) {
             if(to_do_list.empty()) {
-                cout << "La lista esta vacia!" << endl;
+                cout << "La lista está vacía!" << endl;
             } else {
                 mostrar_lista(to_do_list);
             }
