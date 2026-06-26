@@ -43,9 +43,14 @@ bool cmp(const Informacion& a, const Informacion& b) {
  * @param v Vector a ordenar
  */
 void ordenar_vector(vector<Informacion>& v) {
-    sort(v.begin(), v.end(), cmp);
-    cout << "Lista ordenada segun prioridad!" << endl;
-
+    if(v.empty()) {
+        cout << "No hay tareas" << endl;
+    }
+    else {
+        sort(v.begin(), v.end(), cmp);
+        cout << "Lista ordenada segun prioridad!" << endl;
+    }
+    
     return;
 }
 
@@ -112,14 +117,45 @@ void marcar_tarea_hecha(vector<Informacion>& v) {
     if(num_tarea <= 0 or num_tarea >= v.size() + 1) {
         cout << "Indice incorrecto, prueba de nuevo!" << endl; 
     } else {
-        v[num_tarea-1].realizada = true;
-        cout << "Tarea numero " << num_tarea << " marcada como hecha!" << endl;
+        if(v[num_tarea-1].realizada) {
+            cout << "Tarea previamente marcada como hecha" << endl;
+        }
+        else {
+            v[num_tarea-1].realizada = true;
+            cout << "Tarea numero " << num_tarea << " marcada como hecha!" << endl;
+        }
     }
 
     return;
 }
 
 
+/**
+ * @brief Borra y ordena(despues de borrar) las tareas hechas
+ * 
+ * @param v Vector de Tareas
+ */
+void borrar_tareas_hechas(vector<Informacion>& v) {
+    if(v.empty()) {
+        cout << "No hay tareas" << endl;
+
+        return;
+    }
+
+    auto it = v.begin();
+
+    while(it != v.end()) {
+        if(it->realizada) {
+            it = v.erase(it);
+        } else {
+            it++;
+        }
+    }
+
+    ordenar_vector(v);
+
+    return;
+}
 
 
 /**
@@ -128,6 +164,12 @@ void marcar_tarea_hecha(vector<Informacion>& v) {
  * @param v Vector de lista de tareas
  */
 void borrar_lista(vector<Informacion>& v) {
+    if(v.empty()) {
+        cout << "No hay tareas" << endl;
+
+        return;
+    }
+
     string confirmacion;
     cout << "Estas seguro de que quieres borrar la lista? Introduce Y/N: ";
     cin >> confirmacion;
@@ -186,6 +228,12 @@ void crear_archivo(const vector<Informacion>& v, string nombre) {
  * @param v Vector con las cosas
  */
 void exportar_lista(map<string, int>& m, const vector<Informacion>& v) {
+    if(v.empty()) {
+        cout << "No hay tareas, por lo tanto, es imposible exportarlas a un .txt" << endl;
+
+        return;
+    }
+
     string nombre;
     string nombre_archivo;
     cout << "Introduce el nombre del archivo: ";
@@ -203,10 +251,12 @@ void exportar_lista(map<string, int>& m, const vector<Informacion>& v) {
         nombre_archivo = generador_nombre_archivo(nombre, it->second);
     }
 
-    // Ponerle la extension .txt
-    nombre_archivo = nombre_archivo + ".txt";
+    // Ponerle la extension .txt y dentro de la carpeta out
+    nombre_archivo = "out/" + nombre_archivo + ".txt";
 
     crear_archivo(v, nombre_archivo);
+
+    cout << "Archivo .txt creado!" << endl;
 
     return;
 }

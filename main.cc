@@ -1,8 +1,7 @@
 #include <iostream>
-#include <fstream>
 
-#include "funciones.hh"
-#include "menu.hh"
+#include "include/funciones.hh"
+#include "include/menu.hh"
 
 using namespace std;
 
@@ -46,16 +45,19 @@ int main() {
             }
         }
         else if(selector == 5) {
-            borrar_lista(to_do_list);
+            borrar_tareas_hechas(to_do_list);
         }
         else if(selector == 6) {
-            exportar_lista(nombre_veces, to_do_list);
+            borrar_lista(to_do_list);
         }
         else if(selector == 7) {
+            exportar_lista(nombre_veces, to_do_list);
+        }
+        else if(selector == 8) {
             mostrar_informacion();
         }
         else {
-            cout << "Opcion incorrecta, prueba de nuevo" << endl;
+            cout << "Opcion incorrecta, prueba de nuevo!" << endl;
         }
 
         cout << "Ingresa tu opcion: ";

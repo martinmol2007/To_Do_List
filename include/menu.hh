@@ -14,9 +14,10 @@ void selector_inicial() {
     cout << "02. Marcar tarea como hecha" << endl;
     cout << "03. Ordenar la lista" << endl;
     cout << "04. Mostrar la lista" << endl;
-    cout << "05. Borrar la lista" << endl;
-    cout << "06. Exportar lista tipo .txt" << endl;
-    cout << "07. Mostrar opciones" << endl;
+    cout << "05. Borrar las tareas hechas y ordena" << endl;
+    cout << "06. Borrar la lista" << endl;
+    cout << "07. Exportar lista tipo .txt" << endl;
+    cout << "08. Mostrar opciones" << endl;
     cout << "Ingresa tu opcion: ";
 
     return;
@@ -51,9 +52,10 @@ void mostrar_informacion() {
     cout << "02. Marcar tarea como hecha" << endl;
     cout << "03. Ordenar la lista" << endl;
     cout << "04. Mostrar la lista" << endl;
-    cout << "05. Borrar la lista" << endl;
-    cout << "06. Exportar lista tipo .txt" << endl;
-    cout << "07. Mostrar opciones" << endl;
+    cout << "05. Borrar las tareas hechas y ordena" << endl;
+    cout << "06. Borrar la lista" << endl;
+    cout << "07. Exportar lista tipo .txt" << endl;
+    cout << "08. Mostrar opciones" << endl;
     cout << "///////////////////////////////////////////////" << endl;
 
     return;
