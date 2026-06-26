@@ -1,7 +1,27 @@
-#pragma once
+#ifndef MENU_HH
+#define MENU_HH
 
 #include <iostream>
+
 using namespace std;
+
+
+/**
+ * @brief Info menu inicial
+ * 
+ */
+void info_inicial() {
+    cout << "////////////////////////////////////////////////////////////////////" << endl;
+    cout << "Bienvenido a la aplicacion (basica) para hacer tu To-Do List!" << endl;
+    cout << "Se dara la opcion para poder escoger entre tres prioridades, siendo" << endl;
+    cout << "1 la maxima prioridad y 3 la minima" << endl;
+    cout << "Tambien podras marcar como hecho las tareas ya realizadas" << endl;
+    cout << "A parte, podras exportarlo a un .txt" << endl;
+    cout << "////////////////////////////////////////////////////////////////////" << endl;
+
+    return;
+}
+
 
 /**
  * @brief Selector inicial
@@ -19,23 +39,6 @@ void selector_inicial() {
     cout << "07. Exportar lista tipo .txt" << endl;
     cout << "08. Mostrar opciones" << endl;
     cout << "Ingresa tu opcion: ";
-
-    return;
-}
-
-
-/**
- * @brief Info menu inicial
- * 
- */
-void info_inicial() {
-    cout << "////////////////////////////////////////////////////////////////////" << endl;
-    cout << "Bienvenido a la aplicacion (basica) para hacer tu To-Do List!" << endl;
-    cout << "Se dara la opcion para poder escoger entre tres prioridades, siendo" << endl;
-    cout << "1 la maxima prioridad y 3 la minima" << endl;
-    cout << "Tambien podras marcar como hecho las tareas ya realizadas" << endl;
-    cout << "A parte, podras exportarlo a un .txt" << endl;
-    cout << "////////////////////////////////////////////////////////////////////" << endl;
 
     return;
 }
@@ -60,3 +63,6 @@ void mostrar_informacion() {
 
     return;
 }
+
+
+#endif

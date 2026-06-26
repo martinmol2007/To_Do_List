@@ -82,6 +82,7 @@ void crear_nueva_tarea(vector<Informacion>& to_do_list) {
     return;
 }
 
+
 /**
  * @brief Saca el "emote" segun si esta hecha o no
  * 
@@ -91,6 +92,7 @@ void crear_nueva_tarea(vector<Informacion>& to_do_list) {
 string estado(const bool& b) {
     return b ? "✓" : "✖";
 }
+
 
 /**
  * @brief Mostrar la lista de tareas actuales
@@ -106,6 +108,11 @@ void mostrar_lista(const vector<Informacion>& v) {
     return;
 }
 
+/**
+ * @brief Marca una tarea como hecha
+ * 
+ * @param v Vector donde estan todas las tareas
+ */
 void marcar_tarea_hecha(vector<Informacion>& v) {
     cout << "A continuacion, se mostrara la lista" << endl;
     mostrar_lista(v);
