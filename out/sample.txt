@@ -1,0 +1,3 @@
+Num.  Prioridad    Estado    Tarea
+[1]       1          ✓       Comprar pan
+[2]       2          ✖       Comprar agua
